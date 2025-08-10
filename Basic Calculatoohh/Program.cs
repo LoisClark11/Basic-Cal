@@ -6,7 +6,7 @@ namespace BasicCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--------Basic Calculator------------");
+            Console.WriteLine("----------Basic Calculator------------");
             Console.Write("Enter first number: ");
             string? input1 = Console.ReadLine();
             if (input1 == null)
@@ -36,30 +36,34 @@ namespace BasicCalculator
             double result = 0;
             bool valid = true;
 
-            switch (opera)
+            if (opera == "+")
             {
-                case "+":
-                    result = num1 + num2;
-                    break;
-                case "-":
-                    result = num1 - num2;
-                    break;
-                case "*":
-                    result = num1 * num2;
-                    break;
-                case "/":
-                    if (num2 != 0)
-                        result = num1 / num2;
-                    else
-                    {
-                        Console.WriteLine("Error: Division by zero.");
-                        valid = false;
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Invalid operator.");
+                result = num1 + num2;
+            }
+            else if (opera == "-")
+            {
+                result = num1 - num2;
+            }
+            else if (opera == "*")
+            {
+                result = num1 * num2;
+            }
+            else if (opera == "/")
+            {
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Error: Division by zero is not allowed.");
                     valid = false;
-                    break;
+                }
+                else
+                {
+                    result = num1 / num2;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid operator. Please use +, -, *, or /.");
+                valid = false;
             }
 
             if (valid)
