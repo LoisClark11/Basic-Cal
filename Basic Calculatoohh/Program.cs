@@ -8,13 +8,30 @@ namespace BasicCalculator
         {
             Console.WriteLine("--------Basic Calculator------------");
             Console.Write("Enter first number: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
+            string? input1 = Console.ReadLine();
+            if (input1 == null)
+            {
+                Console.WriteLine("Input cannot be null.");
+                return;
+            }
+            double num1 = Convert.ToDouble(input1);
 
             Console.Write("Enter operator (+, -, *, /): ");
-            string opera = Console.ReadLine();
+            string? opera = Console.ReadLine();
+            if (opera == null)
+            {
+                Console.WriteLine("Input cannot be null.");
+                return;
+            }
 
             Console.Write("Enter second number: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
+            string? input2 = Console.ReadLine();
+            if (input2 == null)
+            {
+                Console.WriteLine("Input cannot be null.");
+                return;
+            }
+            double num2 = Convert.ToDouble(input2);
 
             double result = 0;
             bool valid = true;
@@ -46,7 +63,7 @@ namespace BasicCalculator
             }
 
             if (valid)
-                Console.WriteLine($"Result: {result}");
+                Console.WriteLine($"Total: {result}");
         }
     }
 }
