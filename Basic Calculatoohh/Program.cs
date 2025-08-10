@@ -67,7 +67,7 @@ namespace BasicCalculator
             }
 
             if (valid)
-                Console.WriteLine($"Total: {result}");
+                Console.WriteLine($"Total: {result:N}");
         }
     }
 }
